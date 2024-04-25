@@ -1,3 +1,4 @@
+// 상단 영역
 window.addEventListener("load", function () {
   // header에 라인의 css를 적용한다.
   const header = document.querySelector(".header");
@@ -29,5 +30,56 @@ window.addEventListener("load", function () {
 
   window.addEventListener("scroll", function () {
     showLine(header, headerActiveValue, headerActiveClass, window.scrollY);
+  });
+});
+
+// 모바일 메뉴 관련
+window.addEventListener("load", function () {
+  // 1. 필요로 한 DOM 요소를 보관한다.
+  // 버튼
+  const mbBt = document.querySelector(".mobile-menu a");
+  // 배경
+  const mbBg = document.querySelector(".mb-header-bg");
+  // 메뉴
+  const mbMenu = document.querySelector(".mb-header-menu");
+
+  // 현재 모바일 메뉴 펼쳐진 상태를 보관
+  let mbMenuOpen = false;
+
+  // 2. 버튼 기능
+  // 2.1. 클릭하면 아이콘을 바꾼다.
+  // 2.2. 클릭하면 모바일 메뉴 및 배경을 보여준다.
+  mbBt.addEventListener("click", function (event) {
+    // a 태그이므로 웹브라우저가 갱신된다.
+    // a 태그가 작동이 안 되도록 기능을 막는다.
+    event.preventDefault();
+    // 아이콘 바꾸기
+    if (mbMenuOpen) {
+      mbBt.classList.remove("mobile-menu-open");
+      mbBg.classList.remove("mb-header-bg-show");
+      mbMenu.classList.remove("mb-header-menu-show");
+      mbMenuOpen = false;
+    } else {
+      // 메뉴가 펼침이 아닌데 사용자가 클릭하면 메뉴를 펼침
+      mbBt.classList.add("mobile-menu-open");
+      mbBg.classList.add("mb-header-bg-show");
+      mbMenu.classList.add("mb-header-menu-show");
+      mbMenuOpen = true;
+    }
+  });
+
+  // 반응형 코드
+  window.addEventListener("resize", function () {
+    // 브라우저의 너비를 알아낸다.
+    const winWidth = window.innerWidth;
+
+    if (winWidth > 1024) {
+      if (mbMenuOpen) {
+        mbBt.classList.remove("mobile-menu-open");
+        mbBg.classList.remove("mb-header-bg-show");
+        mbMenu.classList.remove("mb-header-menu-show");
+        mbMenuOpen = false;
+      }
+    }
   });
 });
