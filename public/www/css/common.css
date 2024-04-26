@@ -5,44 +5,45 @@
 * {
   margin: 0px;
   padding: 0px;
-  box-sizing: border-box;
   /* 옵션 */
-  /* outline-style: none; */
+  outline-style: none;
+  box-sizing: border-box;
 }
 a {
-  text-decoration: none;
   color: #000000;
+  text-decoration: none;
 }
 html {
+  /* 가로 스크롤바 막기 */
   overflow-x: hidden;
 }
 body {
   font-family: "Inter", "Noto Sans KR", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
   font-style: normal;
+  font-weight: 400;
+  font-optical-sizing: auto;
 }
 .br-20 {
   border-radius: 20px;
 }
 
 .bt-wrap {
-  display: flex;
   width: 100%;
-  justify-content: center;
-  align-items: center;
+  display: flex;
   gap: 3px;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 60px;
 }
 .bt-more {
   display: block;
+  padding: 11px 20px;
   border: 1px solid #000;
-  border-radius: 20px;
   font-size: 14px;
   font-weight: 700;
-  padding: 11px 20px;
   line-height: 20px;
   transition: all 0.3s;
+  border-radius: 20px;
 }
 .bt-more:hover {
   background: #000;
@@ -52,4 +53,13 @@ body {
 .wrap {
   position: relative;
   padding-top: 70px;
+}
+
+.inner {
+  width: calc(100% - 30px);
+  max-width: 1170px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
 }
