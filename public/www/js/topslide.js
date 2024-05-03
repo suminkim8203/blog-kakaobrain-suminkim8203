@@ -5,8 +5,6 @@ window.addEventListener("load", function () {
 
   fetch(dataUrl)
     .then((response) => {
-      // Step 1. 자료 받아서 json 변경하기
-      // 토큰을 js의 데이터로 변경하기
       const data = response.json();
       // 변환된 결과를 돌려주기
       return data;
@@ -18,19 +16,19 @@ window.addEventListener("load", function () {
 
       for (let i = 0; i < result.length; i++) {
         const data = result[i];
-        // 템플릿 문법 필요 (html 생성)
+        // 템플릿 문법 필요 (html)
         const test = `<div class="swiper-slide">
-          <a href="${data.url}" style="background: url('./images/${data.pic}') no-repeat center; background-size: cover;">
+          <a href="${data.url}" style="background:url('./images/${data.pic}') no-repeat center; background-size: cover;">
             <p class="slide-title">
               ${data.title}
             </p>
           </a>
         </div>`;
-        slideTags += test;
+        slideTags = slideTags + test;
       }
 
       // 2. 자료를 이용해서 슬라이드에 배치할 html 을 만든다.
-      // 원하는 장소에 출력해보기
+      // 원하는 장소에 출력해 보자.
       const whereTag = document.querySelector(".topslide .swiper-wrapper");
       whereTag.innerHTML = slideTags;
 
@@ -40,7 +38,7 @@ window.addEventListener("load", function () {
         loop: true,
         speed: 800,
         autoplay: {
-          delay: 4500,
+          delay: 2500,
           disableOnInteraction: false,
         },
         pagination: {
@@ -55,7 +53,6 @@ window.addEventListener("load", function () {
         topSlide.autoplay.stop();
       });
       slideArea.addEventListener("mouseleave", function () {
-        console.log("마우스 뺐다!");
         topSlide.autoplay.start();
       });
     })

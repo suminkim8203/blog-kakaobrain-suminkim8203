@@ -1,6 +1,5 @@
 .main {
 }
-/* 띄워쓰면 .main 안의 .inner 붙여쓰면 main이면서 inner */
 .main .inner {
   height: auto;
   display: block;

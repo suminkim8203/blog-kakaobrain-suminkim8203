@@ -19,48 +19,55 @@
   width: 100%;
   height: auto;
 }
+
 .footer-top-info-desc {
   margin-bottom: 30px;
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
-  color: #999;
+  color: #999999;
 }
+
 .bt-orange {
   display: inline-block;
   border: 1px solid #fec62c !important;
   background: #fec62c !important;
   color: #1e1e1e !important;
 }
+
 .footer-top-sitemap {
   display: flex;
   gap: 80px;
 }
+
 .footer-top-sitemap dl {
   width: 50%;
 }
+
 .footer-top-sitemap dl dt {
   margin-bottom: 30px;
   font-size: 16px;
   font-weight: 700;
-  color: #fff;
+  color: #ffffff;
 }
+
 .footer-top-sitemap dl dd {
   margin-bottom: 30px;
 }
+
 .footer-top-sitemap dl dd a {
   display: inline-block;
   font-size: 14px;
   font-weight: 400;
-  color: #999;
+  color: #999999;
   white-space: nowrap;
 }
+
 .footer-top-sitemap dl dd a:hover {
   text-decoration: underline;
 }
 
 .rot-45 {
-  font-weight: 900;
   transform: rotate(45deg);
 }
 
@@ -85,11 +92,10 @@
 }
 .copy {
   font-size: 14px;
-  color: #666;
+  color: #666666;
 }
 .footer-bottom-sns {
 }
-
 .sns-list {
   display: flex;
   gap: 20px;
@@ -102,7 +108,7 @@
   color: #807f80;
 }
 .sns-list li a:hover {
-  color: #ccc;
+  color: #cccccc;
 }
 
 @media all and (max-width: 1024px) {
