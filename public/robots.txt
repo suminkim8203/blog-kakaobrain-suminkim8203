@@ -1,3 +1,9 @@
-# https://www.robotstxt.org/robotstxt.html
+# *
 User-agent: *
-Disallow:
+Allow: /
+
+# Host
+Host: https://blog-kakaobrain-suminkim8203.vercel.app/
+
+# Sitemaps
+Sitemap: https://blog-kakaobrain-suminkim8203.vercel.app/sitemap.xml
